@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ type = "button", text, href, onClick, disabled = false, isSelected, newTab }) => {
+const Button = ({ type = "button", text, href, onClick, disabled = false, isSelected, newTab=true }) => {
     switch (type) {
         case "link": // Retourne un lien <a> si le type est "link"
             return (

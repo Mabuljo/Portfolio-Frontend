@@ -80,7 +80,8 @@ header {
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: 100%;
+            overflow-y: auto;
             background: rgba(settings.$background-color, 0.95);
             transform: translateX(-100%);
             transition: transform 0.3s ease;

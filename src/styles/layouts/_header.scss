@@ -1,0 +1,165 @@
+@use '../settings';
+@use"./mixins";
+
+.active-menu { // Empêche le défilement de l'arrière-plan quand le menu burger est ouvert
+    overflow-y: hidden; 
+    position: fixed;
+    width: 100%;
+}
+
+header {
+    position: relative;
+    min-height: 100vh;
+
+    .header-content {
+        @include mixins.displayFlex;
+        text-align: center;
+        min-height: 100vh;
+        opacity: 0;
+        transform: translateY(70px);
+        animation: headerAnim 2s forwards;
+        
+        h1 {  
+            color: settings.$background-color;
+            font-size: 6rem;
+            font-weight: normal;
+            padding: 0 30px;
+            background-color: rgba(0, 0, 0, 0.05);
+            @media (min-width: 768px) and (max-width: 1024px) {
+                font-size: 4rem;
+            }
+            @media (max-width: 768px){
+                font-size: 3rem;
+            }
+
+        }
+        
+        span {
+            border: 3px solid settings.$background-color;
+            border-radius: 50px;
+            height: 60px;
+            width: 60px;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media (max-width: 768px){
+                font-size: 1rem;
+            }
+
+
+            .fa-arrow-down {
+                color: settings.$background-color;
+            }
+        }
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr 1fr 1fr 1fr 1fr;
+        align-items: center;
+        background: rgba(251, 249, 236, 0.5);
+        border-radius: 25px 25px 0 0;
+        box-sizing: border-box;
+        width: 85%;
+        height: 100px;
+        z-index: 100;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        &.connected{
+            grid-template-columns: auto 1fr 1fr;
+        }
+
+        @media (max-width: 768px){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(settings.$background-color, 0.95);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            border-radius: 0;
+
+            &.openMenu {
+                transform: translateX(0);
+                padding-top: 20px ;
+            }
+        }
+
+        .nav_logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 25px 25px 0 0;
+
+            @media (max-width: 768px){
+                border-radius: 0;
+            }
+        }
+
+        a {
+            color: settings.$main-color;
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-style: italic;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:visited {
+                color: settings.$main-color;
+            }
+            &:hover {
+                background: settings.$background-color;
+                color: settings.$main-color;
+                border-radius: 25px 25px 0 0;
+            }
+            @media (max-width: 1024px){
+                font-size: 1.2rem;
+            }
+            @media (max-width: 768px){
+                padding: 1rem;
+                &:hover {
+                    background: none;
+                }
+            }
+        }
+    }
+
+    // style des icones du menu burger
+    .menu {
+        display: none;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 100;
+        border-radius: 5px;
+        background-color: settings.$background-color;
+        padding: 5px;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    .fa-bars {
+        color: settings.$background-color;
+        background: none;
+    }
+    .fa-xmark {
+        color: settings.$main-color;
+        background: none;
+    }
+}
+
+
+

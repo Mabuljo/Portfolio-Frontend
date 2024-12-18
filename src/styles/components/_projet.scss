@@ -1,0 +1,20 @@
+@use"../settings";
+@use"../layouts/mixins";
+
+.adminProjets_content--projet {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    background: settings.$main-color;     
+    border-radius: 25px;
+    padding: 20px;
+    p, .fa-trash-can {
+        color: settings.$background-color;
+    }
+    .fa-trash-can {
+        cursor: pointer;
+        &:hover { 
+            transform: scale(1.2);
+        }
+    } 
+}

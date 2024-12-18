@@ -1,0 +1,43 @@
+@use"../settings";
+
+.btn {
+    cursor: pointer;
+    background-color: settings.$main-color;
+    color: settings.$background-color;
+    font-weight: 800;
+    font-size: 1.125rem;
+    font-style: italic;
+    text-align: center;
+    border: none;
+    border-radius: 25px;
+    height: 45px;
+    min-width: 170px;
+    transition: 0.2s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    @media (max-width: 768px){
+        font-size: 0.9rem;
+        min-width: 110px;
+        }
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.35);
+    }
+}
+
+.btn-selected {
+    background-color: settings.$secondary-color;
+    color: settings.$main-color;
+}
+
+.submit {
+    background-color: settings.$background-color;
+    color: settings.$main-color;
+}
+
+.link {
+    padding: 10px 20px;
+    @media (max-width: 768px){
+        padding: 10px;
+        }
+}

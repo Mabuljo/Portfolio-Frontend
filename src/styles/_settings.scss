@@ -1,0 +1,82 @@
+// regroupe toutes les variables et style général du projet
+
+@use"./layouts/mixins";
+
+// Polices
+$font-title: "Great Vibes";
+$font-text: "Lora",serif;
+
+// Variables
+$main-color: #513307;
+$secondary-color: #DDCEAA;
+$background-color: #FBF9EC;
+
+
+// Général
+html, body {
+    height: 100vh;
+    margin: 0 auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url("../background_image/pcSepia.webp") fixed center/cover;
+    text-align: center;
+    max-width: 1300px;
+    font-size: 20px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 100;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: black;
+        animation: animBefore 1.5s ease-in forwards;
+        animation-delay: 0.15s;
+    }
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @include mixins.policeText;
+}
+
+h1, h2, h3, h4 {
+    font-family: $font-title;
+    color: $main-color;
+}
+
+p {
+    color: $main-color;
+    @media (max-width: 1024px){
+        font-size: 1rem;
+    }
+}
+
+
+a {
+    text-decoration: none;
+    &:visited {
+        color: $background-color;
+    }
+}
+
+ul, li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+

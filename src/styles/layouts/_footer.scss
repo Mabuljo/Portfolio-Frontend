@@ -1,0 +1,61 @@
+@use '../settings';
+
+footer {
+    width: 85%;
+    margin: 0 auto;
+    background: settings.$background-color;
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 768px){
+        border-radius: 10px 10px 0 0;
+    }
+
+    .footer_logo {
+        width: 100px;
+        height: 100px;
+        border-radius: 25px 25px 0 0;
+    }
+    .footer_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .link_mentions {
+        color: settings.$main-color;
+        margin-right: 10px;
+        font-weight: bold;
+        &:visited {
+            color: settings.$main-color;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px){
+            font-size: 1rem;
+        }
+    }
+
+    .reseaux {
+        font-size: 2rem;
+        min-width: 100px;
+        max-width: 300px;
+        width: 25%;
+        display: flex;
+        justify-content: space-around;
+        margin-right: 10px;
+        a {
+            color: settings.$main-color ;
+            transition: 0.15s;
+            &:visited {
+                color: settings.$main-color;
+            }
+            &:hover { 
+                transform: scale(1.2);
+            }
+        }
+    }
+}

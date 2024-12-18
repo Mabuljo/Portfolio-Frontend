@@ -1,0 +1,111 @@
+// Mixins
+
+@mixin policeText {
+    font-family: 'Lora',serif;
+    font-style: italic;
+}
+
+@mixin displayFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+@mixin displayGrid {
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    gap: 50px;
+}
+
+@mixin sectionFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    @media (max-width: 1024px){
+        gap: 30px;
+    }
+}
+
+@mixin title($main-color){
+    font-size: 5rem;
+    padding: 0 0 20px 0;
+    position: relative;
+    display: block;
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        width: 28%;
+        height: 1px;
+        background: $main-color;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &:before {
+        left: 0;
+        @media (max-width: 768px){
+            display: none;
+        }
+    }
+    &:after {
+        right: 0;
+        @media (max-width: 768px){
+            width: 50%;
+            transform: translateX(-50%) translateY(20px);
+        }
+    }
+
+    @media (max-width: 1024px){
+        font-size: 3rem;
+    }
+    @media (max-width: 768px){
+        font-size: 2.5rem;
+    }      
+}
+
+@mixin modale {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Animation de la modale (état initial)
+    opacity: 0; 
+    transition: opacity 0.5s ease-out;
+
+    @media (max-width:768px){
+        padding: 0 15px;
+    }
+
+    &.is-open {
+        opacity: 1; 
+    } 
+}
+
+@mixin modaleContainer {
+    width: 600px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+    padding: 30px 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 25px;
+    position: relative;
+    box-sizing: border-box;
+        
+    @media (max-width:768px){
+        border-radius: 10px;
+        overflow-y: auto;
+    }
+}

@@ -1,0 +1,71 @@
+@use"../settings";
+@use"../layouts/mixins";
+
+.login {
+    @include mixins.sectionFlex;
+    gap: 50px;
+
+    &_container {
+        @include mixins.displayFlex;
+        width: 85%;
+        padding: 50px;
+        margin: 50px auto 0;
+        background: settings.$background-color;     
+        border-radius: 25px;
+        @media (max-width: 1024px){
+            gap: 20px;
+        }
+
+        h1 {
+            width: 100%;
+            @include mixins.title(settings.$main-color);
+        }
+    }
+
+    &_content {
+        @include mixins.displayFlex;
+        width: 100%; 
+    }
+
+    &_form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: settings.$main-color;
+        color: settings.$background-color;
+        padding: 30px;
+        border-radius: 25px;
+        box-sizing: border-box;
+
+        &--details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        label {
+            margin: 2px 0 1px 0;
+            @media (max-width:768px){
+                font-size: 15px;
+            }
+        }
+        input {
+            background-color: settings.$background-color;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            font-size: 1.2em;
+            padding-left: 10px;
+            margin-bottom: 20px;
+            height: 50px;
+            @media (max-width:768px){
+                font-size: 1rem;
+            }
+        }
+        .connexion-error {
+            color: settings.$background-color;
+            padding-bottom: 20px;
+        }
+    }
+}

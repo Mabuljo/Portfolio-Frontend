@@ -1,0 +1,25 @@
+/*** Animation de l'écran d'accueil noir ***/ 
+@keyframes animBefore {
+    to {
+        opacity: 0;
+        z-index: -1000;
+    }
+}
+
+/*** Animation du header ***/
+@keyframes headerAnim {
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*** Animation du spinner du formulaire de contact ***/
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

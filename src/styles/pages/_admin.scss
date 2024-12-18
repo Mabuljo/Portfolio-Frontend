@@ -1,0 +1,76 @@
+@use"../settings";
+@use"../layouts/mixins";
+
+.admin {
+    @include mixins.sectionFlex;
+    gap: 50px;
+
+    h1 {
+        width: 100%;
+        @include mixins.title(settings.$main-color);
+        padding: 0;
+    }
+    .logout {
+        color: settings.$main-color;
+        font-weight: bold;
+        align-self: end;
+        &:visited {
+            color: settings.$main-color;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px){
+            font-size: 1rem;
+        }
+    }
+    .adminSection {
+        @include mixins.displayFlex;
+        gap: 30px;
+        width: 85%;
+        padding: 30px;
+        margin: 20px auto 0;
+        background: settings.$background-color;     
+        border-radius: 25px;
+        color: settings.$main-color;
+        @media (max-width: 1024px){
+            gap: 20px;  
+        }
+        @media (max-width: 768px){
+            padding: 20px;
+        }
+
+        &_menu {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            gap: 20px;
+        }
+
+        .adminProjets {
+            @include mixins.displayFlex;
+            gap: 30px;
+            width: 100%;
+            @media (max-width: 768px){
+                gap: 20px;  
+            }
+            h2 {
+                font-size: 3rem;
+                @media (max-width:1024px){
+                    font-size: 2rem;
+                }
+            }
+            &_content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                place-items: center;
+                width: 100%;
+                gap: 20px;
+                @media (max-width: 768px){
+                    grid-template-columns: 1fr;
+                }
+
+            }
+        }
+    }
+}

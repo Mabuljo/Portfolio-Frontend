@@ -1,0 +1,223 @@
+@charset "UTF-8";
+html, body {
+  height: 100vh;
+  margin: 0 auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url(../assets/images/pcSepia.webp) fixed center/cover;
+  text-align: center;
+  max-width: 1300px;
+  font-size: 20px;
+}
+body::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  -webkit-animation: animBefore 1.5s ease-in forwards;
+          animation: animBefore 1.5s ease-in forwards;
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+
+#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lora", serif;
+  font-style: italic;
+  color: #513307;
+}
+
+h1, h2, h3 {
+  font-family: "Great Vibes";
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #FBF9EC;
+}
+
+ul, li {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+img {
+  width: 10%;
+}
+
+/*** Animation de l'écran d'accueil noir ***/
+@-webkit-keyframes animBefore {
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes animBefore {
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+/*** Animation du header ***/
+@-webkit-keyframes headerAnim {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes headerAnim {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+header {
+  position: relative;
+  min-height: 100vh;
+}
+header .header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  opacity: 0;
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+  -webkit-animation: headerAnim 2s forwards;
+          animation: headerAnim 2s forwards;
+}
+header .header-content h1 {
+  color: #FBF9EC;
+  font-size: 7.5rem;
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+header .header-content span {
+  border: 2px solid #FBF9EC;
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .header-content span .fa-arrow-down {
+  color: #FBF9EC;
+}
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 25px 25px 0 0;
+  width: 85%;
+  height: 100px;
+  z-index: 100;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+header nav_logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 25px 25px 0 0;
+}
+header nav a {
+  color: #513307;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 42px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header nav a:visited {
+  color: #513307;
+}
+header nav a:hover {
+  background: #FBF9EC;
+  color: #513307;
+  border-radius: 25px 25px 0 0;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #513307;
+  color: #FBF9EC;
+  font-weight: 800;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 25px;
+  height: 45px;
+  min-width: 170px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.btn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.submit {
+  background-color: #FBF9EC;
+  color: #513307;
+}
+
+.link {
+  padding-left: 20px;
+  padding-right: 20px;
+}/*# sourceMappingURL=main.css.map */

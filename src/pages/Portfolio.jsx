@@ -25,7 +25,8 @@ const Portfolio = () => {
 
     const [projets, setProjets] = useState([]); // State pour les projets de l'API
     useEffect(() => {
-        axios.get('http://localhost:5000/api/projets')  // URL local de mon API
+        axios.get('https://portfolio-backend-30ae.onrender.com/api/projets') // L'URL de mon backend déployé sur Render
+        // axios.get('http://localhost:5000/api/projets')  // URL local de mon API
             .then(response => {
                 setProjets(response.data);
             })

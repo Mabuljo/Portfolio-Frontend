@@ -59,7 +59,8 @@ const ModalAdmin = ({toggleModalAdmin, isOpen, token, refreshProjets}) => {
         };
 
         // Envoyer la requête POST avec Axios
-        axios.post('http://localhost:5000/api/projets', projectData, {
+        // axios.post('http://localhost:5000/api/projets', projectData, {
+        axios.post('https://portfolio-backend-30ae.onrender.com/api/projets', projectData, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

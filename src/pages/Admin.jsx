@@ -13,7 +13,8 @@ const Admin = () => {
 
     // Pour récupérer les projets
     const fetchProjets = () => {
-        axios.get('http://localhost:5000/api/projets')  // URL local de mon API
+        axios.get('https://portfolio-backend-30ae.onrender.com/api/projets') // L'URL de mon backend déployé sur Render
+        // axios.get('http://localhost:5000/api/projets')  // URL local de mon API
             .then(response => {
                 setProjetsAdmin(response.data);
             })
@@ -36,7 +37,8 @@ const Admin = () => {
     const deleteProjet = async (id) => {
         if (window.confirm("Voulez-vous vraiment supprimer ce projet ?")) {
             try {
-                await axios.delete(`http://localhost:5000/api/projets/${id}`, {
+                // await axios.delete(`http://localhost:5000/api/projets/${id}`, {
+                await axios.delete(`https://portfolio-backend-30ae.onrender.com/api/projets/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

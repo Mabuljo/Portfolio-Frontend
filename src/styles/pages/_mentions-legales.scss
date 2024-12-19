@@ -27,7 +27,7 @@
             &:before, &:after {
                 width: 20%;
             }
-            &:before {
+            &:after {
                 @media (max-width: 768px){
                     width: 50%;
                 }
